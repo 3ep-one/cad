@@ -79,19 +79,20 @@ module controller(
         endcase
     end
 
+    
+    reg [63:0] output_adder_single;
 
-
-	adder ADDER (reg_a_stable,
-	  reg_b_stable,
-	  input_a_stable,
-	  input_b_stable,
-	  input_z_ack,
-	  clk,
-	  rst_n,
-	  output_z,
-	  output_z_stable,
-	  output_a_ack,
-	  output_b_ack);
+    adder ADDER (reg_a_stable,
+        reg_b_stable,
+        input_a_stable,
+        input_b_stable,
+        input_z_ack,
+        clk,
+        rst_n,
+        output_adder_single,
+        output_z_stable,
+        output_a_ack,
+        output_b_ack);
  
 	 
     // SIGNAL
@@ -124,10 +125,11 @@ module controller(
             end
             ID_1:
             begin
-                ///if(reg_op_stable == 3'b000)
-                //begin
-					
-                //end
+
+                if(reg_op_stable == 3'b000)
+                begin
+                    
+                end
 
             end
             EX_1:
