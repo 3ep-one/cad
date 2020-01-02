@@ -57,7 +57,7 @@ module adder(
   reg       guard, round_bit, sticky;
   reg       [27:0] sum;
 
-  always @(*)
+  always @(posedge clk)
   begin
 
     case(state)
